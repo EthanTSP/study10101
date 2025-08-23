@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Focus Timer</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="text-center mb-4">
+                        <i class="fas fa-clock me-2"></i>Study Time HEHEHEHE
+                    </h1>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Timer Section -->
+                <div class="col-lg-6 mb-4">
+                    <div class="timer-card">
+                        <div class="timer-label" id="timerLabel">Study Session</div>
+                        <div class="timer-display" id="timerDisplay">25:00</div>
+
+                        <div class="progress-bar-custom">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+
+                        <div class="timer-controls">
+                            <button class="btn btn-timer" id="startBtn">
+                                <i class="fas fa-play me-1"></i>Start
+                            </button>
+                            <button class="btn btn-timer-secondary" id="pauseBtn" disabled>
+                                <i class="fas fa-pause me-1"></i>Pause
+                            </button>
+                            <button class="btn btn-timer-secondary" id="resetBtn">
+                                <i class="fas fa-refresh me-1"></i>Reset
+                            </button>
+                        </div>
+
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <button class="btn btn-timer w-100" id="studyBtn">
+                                    Study (25min)
+                                </button>
+                            </div>
+                            <div class="col-6">
+                                <button class="btn btn-timer-secondary w-100" id="breakBtn">
+                                    Break (5min)
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tasks Section -->
+                <div class="col-lg-6 mb-4">
+                    <div class="tasks-card">
+                        <h3 class="mb-3">
+                            <i class="fas fa-tasks me-2"></i>Study Tasks
+                        </h3>
+
+                        <div class="mb-3">
+                            <input type="text" class="task-input" id="taskInput"
+                                placeholder="Enter a task to complete...">
+                            <button class="btn btn-timer w-100" id="addTaskBtn">
+                                <i class="fas fa-plus me-1"></i>Add Task
+                            </button>
+                        </div>
+
+                        <div id="tasksList">
+                            <!-- Tasks will be added here dynamically -->
+                        </div>
+
+                        <div class="session-info">
+                            <h5 class="mb-3">Session Statistics</h5>
+                            <div class="session-stats">
+                                <div class="stat-item">
+                                    <span class="stat-number" id="completedTasks">0</span>
+                                    <span class="stat-label">Tasks Done</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="studySessions">0</span>
+                                    <span class="stat-label">Study Sessions</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number" id="breakSessions">0</span>
+                                    <span class="stat-label">Breaks Taken</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

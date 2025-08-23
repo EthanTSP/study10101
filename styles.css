@@ -1,0 +1,237 @@
+:root {
+    --primary-purple: #5a4fcf;
+    --secondary-purple: #7c3aed;
+    --primary-blue: #3b82f6;
+    --secondary-blue: #1e40af;
+    --dark-purple: #4c1d95;
+    --dark-blue: #1e3a8a;
+    --text-light: #e2e8f0;
+    --text-lighter: #cbd5e1;
+    --card-bg: rgba(30, 41, 59, 0.8);
+    --input-bg: rgba(51, 65, 85, 0.9);
+}
+
+body {
+    background: linear-gradient(135deg, var(--dark-purple) 0%, var(--dark-blue) 100%);
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-light);
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background: transparent;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+.timer-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 20px;
+}
+
+.tasks-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.timer-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+}
+
+.timer-label {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-lighter);
+    margin-bottom: 30px;
+}
+
+.btn-timer {
+    background: var(--primary-purple);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-timer:hover {
+    background: var(--secondary-purple);
+    color: white;
+}
+
+.btn-timer-secondary {
+    background: var(--primary-blue);
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 5px;
+    transition: background-color 0.2s;
+}
+
+.btn-timer-secondary:hover {
+    background: var(--secondary-blue);
+    color: white;
+}
+
+.task-input {
+    background: var(--input-bg);
+    border: 1px solid rgba(100, 116, 139, 0.4);
+    color: var(--text-light);
+    padding: 12px 15px;
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.task-input:focus {
+    outline: none;
+    border-color: var(--primary-purple);
+    background: var(--input-bg);
+    color: var(--text-light);
+    box-shadow: 0 0 0 2px rgba(90, 79, 207, 0.3);
+}
+
+.task-input::placeholder {
+    color: var(--text-lighter);
+}
+
+.task-item {
+    background: rgba(51, 65, 85, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+    border-color: var(--primary-blue);
+}
+
+.task-text {
+    flex: 1;
+    color: var(--text-light);
+}
+
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-task {
+    background: none;
+    border: none;
+    color: var(--text-lighter);
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.btn-task:hover {
+    color: var(--text-light);
+}
+
+.btn-complete:hover {
+    color: var(--primary-blue);
+}
+
+.btn-delete:hover {
+    color: #ef4444;
+}
+
+.session-info {
+    background: rgba(51, 65, 85, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.3);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.session-stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    margin: 10px;
+}
+
+.stat-number {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-purple);
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-lighter);
+}
+
+.progress-bar-custom {
+    background: rgba(51, 65, 85, 0.8);
+    height: 8px;
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, var(--primary-purple), var(--primary-blue));
+    height: 100%;
+    width: 0%;
+    transition: width 1s ease;
+}
+
+.timer-controls {
+    text-align: center;
+    margin: 20px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .timer-display {
+        font-size: 2.5rem;
+    }
+
+    .timer-card,
+    .tasks-card {
+        padding: 20px;
+    }
+
+    .session-stats {
+        flex-direction: column;
+        align-items: center;
+    }
+}
