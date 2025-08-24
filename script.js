@@ -3,8 +3,8 @@ class StudyTimer {
         this.isRunning = false;
         this.isPaused = false;
         this.currentMode = 'study'; // 'study' or 'break'
-        this.timeLeft = 25 * 60; // 25 minutes in seconds
-        this.totalTime = 25 * 60;
+        this.timeLeft = 120 * 60; // 25 minutes in seconds
+        this.totalTime = 120 * 60;
         this.interval = null;
         this.tasks = [];
         this.stats = {
